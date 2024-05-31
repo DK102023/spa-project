@@ -1,0 +1,133 @@
+
+
+
+<div class=" container">
+
+  <!-- HEADER -->
+  <header class="d-flex py-3  flex-grow-1 flex-column ps-5 " >
+
+    <h1 class="mb-5 mt-5 pt-5 text-start">Главная</h1>
+
+  </header>
+  <!-- END OF HEADER -->
+
+
+  <!-- CONTENT -->
+  <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-1 ms-5 me-5 ">
+
+
+
+    <div class ="table-buttons row mt-2">
+      <div class="d-flex  justify-content-between table-button-container ps-0">
+        <button class="btn btn-secondary" type="button">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button">Год</button>
+        <button class="btn btn-outline-secondary" type="button">Все</button>
+        <button class="btn btn-outline-secondary" type="button">Инервал</button>
+        <div class="align-self-end">с <a href="#">Дата</a> по <a href="#"> Дата</a></div>
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Элемент canvas для первой диаграммы -->
+            <canvas class="chart" id="chart1" width="400" height="400"></canvas>
+          </div>
+          <div class="col-md-6">
+            <!-- Элемент canvas для второй диаграммы -->
+            <canvas class="chart" id="chart2" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Получаем ссылки на элементы canvas
+          var ctx1 = document.getElementById('chart1').getContext('2d');
+          var ctx2 = document.getElementById('chart2').getContext('2d');
+
+          // Создаем экземпляры объектов Chart для двух диаграмм
+          var chart1 = new Chart(ctx1, {
+            type: 'pie', // Указываем тип диаграммы
+            data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              datasets: [{
+                label: 'My Dataset',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(54, 162, 235)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                  'rgb(153, 102, 255)',
+                  'rgb(255, 159, 64)'
+                ],
+                hoverOffset: 4 // Отступ при наведении
+              }]
+            },
+            options: {
+              // Настройки для первой диаграммы
+            }
+          });
+
+          var chart2 = new Chart(ctx2, {
+            type: 'pie', // Указываем тип диаграммы
+            data: {
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              datasets: [{
+                label: 'My Dataset',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(54, 162, 235)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                  'rgb(153, 102, 255)',
+                  'rgb(255, 159, 64)'
+                ],
+                hoverOffset: 4 // Отступ при наведении
+              }]
+            },
+            options: {
+              // Настройки для второй диаграммы
+            }
+          });
+        });
+      </script>
+
+
+
+
+      <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#ModalBox">
+      Открыть модальное окно
+    </button>
+
+
+    </div>
+  </div>
+  <!-- END OF CONTENT -->
+  <!-- Button trigger modal -->
+
+  <!-- MODAL -->
+  <div class="modal fade" id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
+         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        </div>
+       <!-- <div class="modal-body">
+          Здесь может быть ваш текст.
+        </div>-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Да,удалить</button>
+          <button type="button" class="btn btn-success">Не удалять</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END OF MODAL-->
+</div>
+

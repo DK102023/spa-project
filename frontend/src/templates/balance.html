@@ -1,0 +1,127 @@
+
+
+<div class=" container">
+
+  <!-- HEADER -->
+  <header class="d-flex py-3  flex-grow-1 flex-column ps-5 " >
+
+    <h1 class="mb-5 mt-5 pt-5 text-start">Доходы и Расходы</h1>
+
+  </header>
+  <!-- END OF HEADER -->
+
+
+  <!-- CONTENT -->
+  <div class=" row-cols-1 row-cols-md-2 row-cols-lg-1 ms-5 me-5 ">
+
+    <div class="row justify-content-start">
+
+      <div class ="d-flex  justify-content-start button-container mb-4">
+        <button class="btn btn-success me-2" type="button" >Создать доход</button>
+        <button class="btn btn-danger " type="button">Создать расход</button>
+      </div>
+          </div>
+
+    <div class ="table-buttons row mt-2">
+      <div class="d-flex  justify-content-between table-button-container ps-0">
+        <button class="btn btn-secondary" type="button">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button">Год</button>
+        <button class="btn btn-outline-secondary" type="button">Все</button>
+        <button class="btn btn-outline-secondary" type="button">Инервал</button>
+        <div class="align-self-end">с <a href="#">Дата</a> по <a href="#"> Дата</a></div>
+
+      </div>
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col"># операции</th>
+          <th scope="col">Тип</th>
+          <th scope="col">Категория</th>
+          <th scope="col">Сумма</th>
+          <th scope="col">Дата</th>
+          <th scope="col">Комментарии</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Тип 1</td>
+          <td>Категория 1</td>
+          <td>100</td>
+          <td>01.01.2023</td>
+          <td>
+            <div class="d-flex justify-content-end">
+              <i class="bi bi-trash"></i>
+              <i class="bi bi-pencil me-2"></i>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Тип 2</td>
+          <td>Категория 2</td>
+          <td>200</td>
+          <td>02.02.2023</td>
+          <td>
+            <div class="d-flex justify-content-end">
+              <i class="bi bi-trash"></i>
+              <i class="bi bi-pencil me-2"></i>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Тип 3</td>
+          <td>Категория 3</td>
+          <td>300</td>
+          <td>03.03.2023</td>
+          <td>
+            <div class="d-flex justify-content-end">
+              <i class="bi bi-trash"></i>
+              <i class="bi bi-pencil me-2"></i>
+
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#ModalBox">
+      Открыть модальное окно
+    </button>
+
+
+    </div>
+  </div>
+  <!-- END OF CONTENT -->
+  <!-- Button trigger modal -->
+
+  <!-- MODAL -->
+  <div class="modal fade" id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
+         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        </div>
+       <!-- <div class="modal-body">
+          Здесь может быть ваш текст.
+        </div>-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Да,удалить</button>
+          <button type="button" class="btn btn-success">Не удалять</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END OF MODAL-->
+</div>
+

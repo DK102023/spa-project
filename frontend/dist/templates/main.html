@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <!-- CSS Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Подключение иконок Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"  media="all">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+
+  <link rel="stylesheet" href="./src/styles/styles.css">
+  <!-- JavaScript и Popper.js для интерактивных компонентов (необязательно) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Подключаем Chart.js -->
+  <script src="chart.min.js"></script>
+</head>
+<body>
+<main class="d-flex">
+  <!-- SIDEBAR -->
+  <div class="d-flex flex-column flex-shrink-0 p-3 border" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <img class="fs-4 mb-3 mt-4" src="./src/static/images/logo.png" alt="Lumincoin">
+    </a>
+    <hr class="pb-4 mb-5">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <i class="bi bi-house"></i>
+         Главная
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link link-dark">
+          <i class="bi bi-cash"></i>
+          Доходы&Расходы
+        </a>
+      </li>
+      <!-- Добавление пункта с выпадающим меню -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Категории
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <!--<li><hr class="dropdown-divider"></li>-->
+          <li><a class="dropdown-item" href="#">Доходы</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Расходы</a></li>
+
+        </ul>
+      </li>
+      <!-- Конец добавления пункта с выпадающим меню -->
+
+    </ul>
+    <div class="balance">
+      <span>Баланс:</span>
+    </div>
+    <hr >
+    <div >
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none " >
+        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>Роман Чернов</strong>
+      </a>
+    </div>
+  </div>
+  <!-- END OF SIDEBAR -->
+
+<div class=" container">
+
+  <!-- HEADER -->
+  <header class="d-flex py-3  flex-grow-1 flex-column ps-5 " >
+
+    <h1 class="mb-5 mt-5 pt-5 text-start">Главная</h1>
+
+  </header>
+  <!-- END OF HEADER -->
+
+
+  <!-- CONTENT -->
+  <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-1 ms-5 me-5 ">
+
+
+
+    <div class ="table-buttons row mt-2">
+      <div class="d-flex  justify-content-between table-button-container ps-0">
+        <button class="btn btn-secondary" type="button">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button">Год</button>
+        <button class="btn btn-outline-secondary" type="button">Все</button>
+        <button class="btn btn-outline-secondary" type="button">Инервал</button>
+        <div class="align-self-end">с <a href="#">Дата</a> по <a href="#"> Дата</a></div>
+
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Элемент canvas для первой диаграммы -->
+            <canvas class="chart" id="chart1" width="400" height="400"></canvas>
+          </div>
+          <div class="col-md-6">
+            <!-- Элемент canvas для второй диаграммы -->
+            <canvas class="chart" id="chart2" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        // Получаем ссылки на элементы canvas
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+
+        // Создаем экземпляры объектов Chart для двух диаграмм
+        var chart1 = new Chart(ctx1, {
+                  type: 'pie', // Указываем тип диаграммы
+                  data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                      label: 'My Dataset',
+                      data: [12, 19, 3, 5, 2, 3],
+                      backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                        'rgb(255, 159, 64)'
+                      ],
+                      hoverOffset: 4 // Отступ при наведении
+                    }]
+                  },
+          options: {
+            // Настройки для первой диаграммы
+          }
+        });
+
+        var chart2 = new Chart(ctx2, {
+          type: 'pie', // Указываем тип диаграммы
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: 'My Dataset',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(153, 102, 255)',
+                'rgb(255, 159, 64)'
+              ],
+              hoverOffset: 4 // Отступ при наведении
+            }]
+          },
+          options: {
+            // Настройки для второй диаграммы
+          }
+        });
+      </script>
+
+
+
+
+      <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#ModalBox">
+      Открыть модальное окно
+    </button>
+
+
+    </div>
+  </div>
+  <!-- END OF CONTENT -->
+  <!-- Button trigger modal -->
+
+  <!-- MODAL -->
+  <div class="modal fade" id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
+         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+        </div>
+       <!-- <div class="modal-body">
+          Здесь может быть ваш текст.
+        </div>-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Да,удалить</button>
+          <button type="button" class="btn btn-success">Не удалять</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END OF MODAL-->
+</div>
+</main>
+</body>
+</html>
