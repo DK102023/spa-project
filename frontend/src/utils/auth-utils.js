@@ -18,6 +18,11 @@ export class AuthUtils{
         localStorage.removeItem(this.refreshTokenKey);
         localStorage.removeItem(this.userInfoTokenKey);
     }
+    static getAuthInfo() {
+        const accessToken = localStorage.getItem(this.accessTokenKey);
+        const refreshToken = localStorage.getItem(this.refreshTokenKey);
+        return accessToken !== null || refreshToken !== null;
+    }
     constructor() {
 
     }

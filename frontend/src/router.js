@@ -1,4 +1,4 @@
-//import {Dashboard} from "./components/dashboard";
+import {Dashboard} from "./components/dashboard";
 import {Login} from "./components/login";
 import {SignUp} from "./components/signup";
 
@@ -16,7 +16,7 @@ export class Router {
                 load: async () =>{
                     await this.loadScript('/js/chart.min.js');
                     //this.initCharts();
-                  //  new Dashboard();
+                    new Dashboard(this.openNewRoute.bind(this));
                 },
             },
             {
