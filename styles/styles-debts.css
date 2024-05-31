@@ -1,0 +1,30 @@
+.main {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+    .main {
+        flex-direction: row;
+    }
+}
+
+.balance {
+    margin-top: auto;
+}
+
+.nav-item.dropdown .dropdown-menu {
+    position: static;
+    float: none;
+}
+
+.plus-button {
+    font-size: 24px;
+    color: white;
+}
+.full-height {
+    height: 100vh; /* Высота сайдбара равна высоте области просмотра */
+}
+.offcanvas {
+    height: 100vh; /* Высота для мобильной версии сайдбара */
+}
