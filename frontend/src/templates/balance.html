@@ -16,28 +16,33 @@
 
     <div class="row justify-content-start">
 
-      <div class ="d-flex  justify-content-start button-container mb-4">
-        <button class="btn btn-success me-2" type="button" >Создать доход</button>
-        <button class="btn btn-danger " type="button">Создать расход</button>
+      <div class ="d-flex  justify-content-start button-container mb-4 ps-0 pe-0">
+        <button class="btn btn-success me-2" type="button" id="create-credit" >Создать доход</button>
+        <button class="btn btn-danger " type="button" id="create-debit">Создать расход</button>
       </div>
           </div>
 
-    <div class ="table-buttons row mt-2">
-      <div class="d-flex  justify-content-between table-button-container ps-0">
-        <button class="btn btn-secondary" type="button">Сегодня</button>
-        <button class="btn btn-outline-secondary" type="button">Неделя</button>
-        <button class="btn btn-outline-secondary" type="button">Месяц</button>
-        <button class="btn btn-outline-secondary" type="button">Год</button>
-        <button class="btn btn-outline-secondary" type="button">Все</button>
-        <button class="btn btn-outline-secondary" type="button">Инервал</button>
-        <div class="align-self-end">с <a href="#">Дата</a> по <a href="#"> Дата</a></div>
+    <div class ="table-buttons row mt-2 mb-2">
+      <div class="d-flex  gap-4 table-button-container ps-0 mb-4" id="buttons-panel">
+        <button class="btn btn-outline-secondary btn-secondary" type="button" data-filter="now">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="week">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="month">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="year">Год</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="all">Все</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="interval">Инервал</button>
+        <!--<div class="align-self-end">с <a href="#" data-filter="date-from">Дата</a> по <a href="#" data-filter="date-to"> Дата</a></div>-->
+        <div class="align-self-end no-resize">с
+          <input type="date" data-filter="date-from" placeholder="Выберите дату" id="date-start">
+          по
+          <input type="date" data-filter="date-to" placeholder="Выберите дату" id="date-end">
+        </div>
 
       </div>
 
       <table class="table">
         <thead>
         <tr>
-          <th scope="col"># операции</th>
+          <th scope="col">№ операции</th>
           <th scope="col">Тип</th>
           <th scope="col">Категория</th>
           <th scope="col">Сумма</th>
@@ -45,8 +50,8 @@
           <th scope="col">Комментарии</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
+        <tbody id="table-data">
+       <!-- <tr>
           <td>1</td>
           <td>Тип 1</td>
           <td>Категория 1</td>
@@ -87,16 +92,14 @@
 
             </div>
           </td>
-        </tr>
+        </tr>-->
         </tbody>
       </table>
 
 
 
 
-      <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#ModalBox">
-      Открыть модальное окно
-    </button>
+
 
 
     </div>
@@ -106,18 +109,18 @@
 
   <!-- MODAL -->
   <div class="modal fade" id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
+          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить операцию?</h5>
          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
         </div>
        <!-- <div class="modal-body">
           Здесь может быть ваш текст.
         </div>-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger">Да,удалить</button>
-          <button type="button" class="btn btn-success">Не удалять</button>
+          <button type="button" class="btn btn-danger " id="delete-record" data-bs-dismiss="modal">Да,удалить</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Не удалять</button>
         </div>
       </div>
     </div>

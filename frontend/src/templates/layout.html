@@ -9,7 +9,7 @@
     <hr class="pb-4 mb-5">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link active" aria-current="page">
+        <a href="/" class="nav-link link-dark " aria-current="page">
           <i class="bi bi-house"></i>
          Главная
         </a>
@@ -22,7 +22,7 @@
       </li>
       <!-- Добавление пункта с выпадающим меню -->
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Категории
           <i class="bi bi-chevron-right"></i>
         </a>
@@ -41,11 +41,15 @@
       <span>Баланс:</span>
     </div>
     <hr >
-    <div >
-      <a href="#" class="d-flex align-items-center link-dark text-decoration-none " >
+
+    <div class="dropdown" id="user-menu">
+      <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>Роман Чернов</strong>
+        <strong id="user-name">Роман Чернов</strong>
       </a>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <li><a class="dropdown-item" href="/logout">Выход из системы</a></li>
+      </ul>
     </div>
   </div>
   <!-- END OF SIDEBAR -->

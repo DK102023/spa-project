@@ -1,4 +1,7 @@
 import {AuthUtils} from "../utils/auth-utils";
+import config from "../config/config";
+import {HttpUtils} from "../utils/http-utils";
+
 export class SignUp{
     constructor(contentElement,openNewRoute) {
         this.openNewRoute = openNewRoute; // получение ф-ции переданной в экземпляр класса из router.js
@@ -49,6 +52,7 @@ export class SignUp{
 
     }
     async signUp(){
+
         this.commonErrorElement.style.display = 'none';
         if  (this.validateForm()){
 
@@ -57,8 +61,18 @@ export class SignUp{
             let lastName = fio[fio.length-1];
             console.log(name);
             console.log(lastName);
+
+            const result = await  HttpUtils.request('/signup','POST', false,{
+                name: name,
+                lastName: lastName,
+                email: this.emailElement.value,
+                password: this.passwordElement.value,
+                passwordRepeat: this.passwordRepeatElement.value,
+            });
+            console.log(result.response)
             //request
-            const response = await fetch('http://localhost:3000/api/signup',{
+            //const response = await fetch('http://localhost:3000/api/signup',{
+           /* const response = await fetch(config.host + config.api,{
                 method: 'POST',
                 headers: {
                     'Content-type' : 'application/json',
@@ -73,7 +87,8 @@ export class SignUp{
                 })
             });
             const result = await response.json();
-            console.log(result)
+            console.log(result) */
+
             if (result.error ){
                 //user: ekaterina.ivanova@gmail.com  pwd: Ek4tIv#702
                 this.commonErrorElement.style.display = 'block';

@@ -10,6 +10,25 @@
     }
   }
 }
+.balance-score{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  color: #0D6EFD;
+}
+.balance-label{
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+
+}
+.dropdown-toggle::after{
+  display: none;
+}
 .input-group-text{
   height: 100%;
 }
@@ -18,7 +37,9 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
+main.d-flex {
+  height: 100vh;
+}
 #content {
   display: flex;
   /*flex-direction: column;*/
@@ -29,4 +50,37 @@ html, body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+/*Перенести в balance*/
+.table>:not(caption)>*>* {
+  border-top-width: var(--bs-border-width);}
+div#buttons-panel .btn, .button-container .btn {
+  width: auto;
+  max-height: 38px;
+  min-width: 100px;
+}
+.btn-secondary {
+  color : #fff;
+}
+input[type="date"]{
+  width: 100px;
+}
+.no-resize {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: 10px; /* расстояние между элементами */
+}
+
+.no-resize input[type="date"] {
+  flex-shrink: 0; /* предотвращает сжатие элементов */
+  min-width: 150px; /* минимальная ширина полей ввода */
+}
+
+.modal-footer{
+  justify-content: center;
+}
+input.form-control.data-input.mb-2 {
+  min-width: 350px;
 }

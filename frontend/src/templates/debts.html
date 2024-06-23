@@ -12,7 +12,7 @@
 
 
     <!-- CONTENT -->
-    <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-3 ms-lg-5 me-lg-5">
+    <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-3 ms-lg-5 me-lg-5" id="elements-container">
       <div class="col px-2 ps-0 py-2 mb-2">
         <div class="border rounded  px-4 py-4">
           <div class="block-title mb-2">Депозиты</div>
@@ -58,24 +58,18 @@
       </div>
     </div>
     <!-- END OF CONTENT -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalBox">
-      Открыть модальное окно
-    </button>
+
     <!-- MODAL -->
     <div class="modal fade " id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
-      <div class="modal-dialog ">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
             <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
           </div>
-          <!-- <div class="modal-body">
-             Здесь может быть ваш текст.
-           </div>-->
           <div class="modal-footer justify-content-center">
-            <button type="button" class="btn btn-danger">Да,удалить</button>
-            <button type="button" class="btn btn-success">Не удалять</button>
+            <button type="button" class="btn btn-danger " id="delete-record" data-bs-dismiss="modal">Да,удалить</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Не удалять</button>
           </div>
         </div>
       </div>

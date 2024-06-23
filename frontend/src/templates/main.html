@@ -17,20 +17,25 @@
 
 
 
-    <div class ="table-buttons row mt-2">
-      <div class="d-flex  justify-content-between table-button-container ps-0">
-        <button class="btn btn-secondary" type="button">Сегодня</button>
-        <button class="btn btn-outline-secondary" type="button">Неделя</button>
-        <button class="btn btn-outline-secondary" type="button">Месяц</button>
-        <button class="btn btn-outline-secondary" type="button">Год</button>
-        <button class="btn btn-outline-secondary" type="button">Все</button>
-        <button class="btn btn-outline-secondary" type="button">Инервал</button>
-        <div class="align-self-end">с <a href="#">Дата</a> по <a href="#"> Дата</a></div>
+    <div class ="table-buttons row mt-2 mb-2">
+      <div class="d-flex  gap-4 table-button-container ps-0 mb-4" id="buttons-panel">
+        <button class="btn btn-outline-secondary btn-secondary" type="button" data-filter="now">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="week">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="month">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="year">Год</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="all">Все</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="interval">Инервал</button>
+        <!--<div class="align-self-end">с <a href="#" data-filter="date-from">Дата</a> по <a href="#" data-filter="date-to"> Дата</a></div>-->
+        <div class="align-self-end no-resize">с
+          <input type="date" data-filter="date-from" placeholder="Выберите дату" id="date-start">
+          по
+          <input type="date" data-filter="date-to" placeholder="Выберите дату" id="date-end">
+        </div>
 
       </div>
 
       <div class="container">
-        <div class="row">
+        <div class="row" id="chart-input">
           <div class="col-md-6">
             <!-- Элемент canvas для первой диаграммы -->
             <canvas class="chart" id="chart1" width="400" height="400"></canvas>
@@ -42,92 +47,14 @@
         </div>
       </div>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          // Получаем ссылки на элементы canvas
-          var ctx1 = document.getElementById('chart1').getContext('2d');
-          var ctx2 = document.getElementById('chart2').getContext('2d');
-
-          // Создаем экземпляры объектов Chart для двух диаграмм
-          var chart1 = new Chart(ctx1, {
-            type: 'pie', // Указываем тип диаграммы
-            data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-              datasets: [{
-                label: 'My Dataset',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
-                  'rgb(255, 205, 86)',
-                  'rgb(75, 192, 192)',
-                  'rgb(153, 102, 255)',
-                  'rgb(255, 159, 64)'
-                ],
-                hoverOffset: 4 // Отступ при наведении
-              }]
-            },
-            options: {
-              // Настройки для первой диаграммы
-            }
-          });
-
-          var chart2 = new Chart(ctx2, {
-            type: 'pie', // Указываем тип диаграммы
-            data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-              datasets: [{
-                label: 'My Dataset',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
-                  'rgb(255, 205, 86)',
-                  'rgb(75, 192, 192)',
-                  'rgb(153, 102, 255)',
-                  'rgb(255, 159, 64)'
-                ],
-                hoverOffset: 4 // Отступ при наведении
-              }]
-            },
-            options: {
-              // Настройки для второй диаграммы
-            }
-          });
-        });
-      </script>
-
-
-
-
-      <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#ModalBox">
-      Открыть модальное окно
-    </button>
-
-
     </div>
   </div>
-  <!-- END OF CONTENT -->
-  <!-- Button trigger modal -->
 
-  <!-- MODAL -->
-  <div class="modal fade" id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
-         <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-        </div>
-       <!-- <div class="modal-body">
-          Здесь может быть ваш текст.
-        </div>-->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger">Да,удалить</button>
-          <button type="button" class="btn btn-success">Не удалять</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--END OF MODAL-->
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Test DOMContentLoaded event triggered');
+  });
+</script>
 
