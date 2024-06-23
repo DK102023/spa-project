@@ -1,0 +1,178 @@
+*{
+    font-family: Roboto,sans-serif;
+}
+/*body{
+    height: 100%;
+}*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+main.d-flex {
+    height: 100vh;
+}
+h1{
+    color: rgb(5, 44, 101);
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 47px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+.dropdown-menu {
+    border-bottom: 1px solid blue;
+    border-left: 1px solid blue;
+    border-right: 1px solid blue;
+    border-top: none;
+}
+ul.dropdown-menu.show{
+    z-index: -1 !important;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate(0px, 31px) !important;
+}
+
+.sidebar {
+  /*  position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 280px; /* Ширина сайдбара */
+    height: 100vh; /* 100% высоты окна браузера */
+   /* overflow-y: auto; /* Включаем вертикальную прокрутку, если контент сайдбара превышает высоту экрана */
+
+}
+
+
+/*signin*/
+form {
+    width: 397px;
+}
+.form-signin {
+    max-width: 397px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.input-group-text {
+   /* height: 100%;*/
+}
+.text-body-secondary {
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+
+}
+a.text-body-secondary{
+    text-decoration-line: underline;
+}
+.dropdown-toggle::after {
+    border: none;
+}
+/*.input-group {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 100%;
+}*/
+
+.input-group-append,.input-group-prepend {
+    display: -ms-flexbox;
+    display: flex
+}
+
+.input-group-append .btn,.input-group-prepend .btn {
+    position: relative;
+    z-index: 2
+}
+
+.input-group-append .btn:focus,.input-group-prepend .btn:focus {
+    z-index: 3
+}
+
+.input-group-append .btn+.btn,.input-group-append .btn+.input-group-text,.input-group-append .input-group-text+.btn,.input-group-append .input-group-text+.input-group-text,.input-group-prepend .btn+.btn,.input-group-prepend .btn+.input-group-text,.input-group-prepend .input-group-text+.btn,.input-group-prepend .input-group-text+.input-group-text {
+    margin-left: -1px
+}
+
+.input-group-prepend {
+    margin-right: -1px
+}
+
+.input-group-append {
+    margin-left: -1px
+}
+
+/*Debts*/
+
+.block-title{
+    color: rgb(41, 6, 97);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33px;
+    text-align: left;
+}
+.plus-button{
+    color: rgb(206, 212, 218);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.custom-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.modal-header, .modal-footer {
+    border: none !important;
+}
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 1rem);
+}
+
+/*adding-cart*/
+.button-container {
+    padding: 0;
+}
+.data-input{
+    margin-bottom: 1em;
+}
+.d-flex.justify-content-between.table-button-container button {
+    width: 128px;
+}
+@media (max-width: 768px) {
+    .modal.fade .modal-dialog {
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+    }
+    .sidebar {
+        height: 80px;
+    }
+}

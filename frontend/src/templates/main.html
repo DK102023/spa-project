@@ -1,0 +1,60 @@
+
+
+
+<div class=" container">
+
+  <!-- HEADER -->
+  <header class="d-flex py-3  flex-grow-1 flex-column ps-5 " >
+
+    <h1 class="mb-5 mt-5 pt-5 text-start">Главная</h1>
+
+  </header>
+  <!-- END OF HEADER -->
+
+
+  <!-- CONTENT -->
+  <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-1 ms-5 me-5 ">
+
+
+
+    <div class ="table-buttons row mt-2 mb-2">
+      <div class="d-flex  gap-4 table-button-container ps-0 mb-4" id="buttons-panel">
+        <button class="btn btn-outline-secondary btn-secondary" type="button" data-filter="now">Сегодня</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="week">Неделя</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="month">Месяц</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="year">Год</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="all">Все</button>
+        <button class="btn btn-outline-secondary" type="button" data-filter="interval">Инервал</button>
+        <!--<div class="align-self-end">с <a href="#" data-filter="date-from">Дата</a> по <a href="#" data-filter="date-to"> Дата</a></div>-->
+        <div class="align-self-end no-resize">с
+          <input type="date" data-filter="date-from" placeholder="Выберите дату" id="date-start">
+          по
+          <input type="date" data-filter="date-to" placeholder="Выберите дату" id="date-end">
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="row" id="chart-input">
+          <div class="col-md-6">
+            <!-- Элемент canvas для первой диаграммы -->
+            <canvas class="chart" id="chart1" width="400" height="400"></canvas>
+          </div>
+          <div class="col-md-6">
+            <!-- Элемент canvas для второй диаграммы -->
+            <canvas class="chart" id="chart2" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Test DOMContentLoaded event triggered');
+  });
+</script>
+

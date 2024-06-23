@@ -1,0 +1,78 @@
+
+
+  <div class=" container ">
+
+    <!-- HEADER -->
+    <header class="d-flex py-3  flex-grow-1 flex-column ps-5 " >
+
+      <h1 class="mb-5 mt-5 pt-5 text-start">Доходы</h1>
+
+    </header>
+    <!-- END OF HEADER -->
+
+
+    <!-- CONTENT -->
+    <div class="row custom-container  row-cols-1 row-cols-md-2 row-cols-lg-3 ms-lg-5 me-lg-5" id="elements-container">
+      <div class="col px-2 ps-0 py-2 mb-2">
+        <div class="border rounded  px-4 py-4">
+          <div class="block-title mb-2">Депозиты</div>
+          <div class="block-actions">
+            <button type="button" class="btn btn-primary mb-1">Редактировать</button>
+            <button type="button" class="btn btn-danger mb-1">Удалить</button>
+          </div>
+        </div>
+      </div>
+      <div class="col px-2 ps-0 py-2 mb-2">
+        <div class="border rounded  px-4 py-4">
+          <div class="block-title mb-2">Зарплата</div>
+          <div class="block-actions">
+            <button type="button" class="btn btn-primary mb-1">Редактировать</button>
+            <button type="button" class="btn btn-danger mb-1">Удалить</button>
+          </div>
+        </div>
+      </div>
+      <div class="col px-2 ps-0 py-2 mb-2">
+        <div class="border rounded  px-4 py-4">
+          <div class="block-title mb-2">Сбережения</div>
+          <div class="block-actions">
+            <button type="button" class="btn btn-primary mb-1">Редактировать</button>
+            <button type="button" class="btn btn-danger mb-1">Удалить</button>
+          </div>
+        </div>
+      </div>
+      <div class="col px-2 py-2 ps-0 mb-2">
+        <div class="border rounded  px-4 py-4">
+          <div class="block-title mb-2">Инвестиции</div>
+          <div class="block-actions">
+            <button type="button" class="btn btn-primary mb-1">Редактировать</button>
+            <button type="button" class="btn btn-danger mb-1">Удалить</button>
+          </div>
+        </div>
+      </div>
+      <div class="col px-2 py-2 ps-0 mb-2">
+        <div class="border rounded  px-4 py-4 w-100 h-100">
+          <button class="btn w-100 h-100">
+            <span class="plus-button d-flex align-items-center justify-content-center">+</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- END OF CONTENT -->
+
+    <!-- MODAL -->
+    <div class="modal fade " id="ModalBox" tabindex="-1" aria-labelledby="ModalBoxLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalBoxLabel">Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.</h5>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-danger " id="delete-record" data-bs-dismiss="modal">Да,удалить</button>
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Не удалять</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--END OF MODAL-->
+  </div>
